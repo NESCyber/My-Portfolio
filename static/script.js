@@ -379,32 +379,8 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Mouse move effect for interactive elements
-document.addEventListener('mousemove', (e) => {
-    const interactiveElements = document.querySelectorAll('.project-card, .skill-item, .contact-item');
-    
-    interactiveElements.forEach(element => {
-        const rect = element.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-        
-        element.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
-});
-
-// Reset transform on mouse leave
-document.addEventListener('mouseleave', () => {
-    const interactiveElements = document.querySelectorAll('.project-card, .skill-item, .contact-item');
-    interactiveElements.forEach(element => {
-        element.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-    });
-});
+// Mouse move effect for interactive elements - REMOVED
+// The rotating effects have been removed to prevent cards from rotating
 
 // Add loading animation
 window.addEventListener('load', () => {
